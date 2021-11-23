@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{%block title %}Register{%endblock%}
+
+{%block content %}
+<div class="container text-dark  mt-5 ">
+    <div class="card ">
+        <div class="card-body m-4">
+            <h1 class="card-title text-center mb-4">Make Post</h1>
+        
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-success my-3" type="submit">Post</button>
+                        <a class="btn btn-outline-secondary mx-4" href="{% url 'home' %}">Back</a>
+                    </div>
+                </form>
+              
+        </div>
+    </div>
+{%endblock%}

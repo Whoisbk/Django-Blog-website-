@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{%block title %}Register{%endblock%}
+
+{%block content %}
+<nav class="navbar navbar-expand-lg navbar-dark  bg-success ">
+    <div class="container">
+      <a class="navbar-brand" href="#">BLOG WEBISTE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto m-2 ">
+        </ul>
+        <form class="d-flex-fluid">
+          <button class="btn btn-outline-success" type="submit">Sign In</button>
+          <button class="btn btn-outline-success" type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<div class="container text-dark  mt-5 " style="justify-content: center; align-self:center; display: flex;">
+    
+    <div class="card ">
+        <div class="card-body m-4">
+            <h1 class="card-title text-center mb-4">Create Account</h1>
+        
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <div class="d-grid gap-2 m-4">
+                        <button class="btn btn-success" type="submit">Create Account</button>
+  
+                        <a  class="btn btn-success " class="nav-link" aria-current="page" href="{% url 'signin' %}">Back</a>
+                    </div>
+                </form>
+               
+        </div>
+    </div>
+</div>
+    
+{%endblock%}
